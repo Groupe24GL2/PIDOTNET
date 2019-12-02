@@ -5,6 +5,9 @@ using System.Web;
 
 namespace PIDOTNET.WEB.Models
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class Instructor
     {
         public int id { get; set; }
@@ -13,5 +16,6 @@ namespace PIDOTNET.WEB.Models
         public string name { get; set; }
         public string password { get; set; }
         public string phone { get; set; }
+
     }
 }
