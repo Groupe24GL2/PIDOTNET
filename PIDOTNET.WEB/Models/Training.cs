@@ -5,6 +5,9 @@ using System.Web;
 
 namespace PIDOTNET.WEB.Models
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class Training
     {
         public int id { get; set; }
@@ -15,5 +18,8 @@ namespace PIDOTNET.WEB.Models
         public string name { get; set; }
         public int nbr_participants { get; set; }
         public DateTime? startDate { get; set; }
+        
+
+
     }
 }
