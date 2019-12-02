@@ -6,7 +6,7 @@ using System.Web;
 namespace PIDOTNET.WEB.Models
 {
     /// <summary>
-    /// 
+    /// comment
     /// </summary>
     public class Instructor
     {
