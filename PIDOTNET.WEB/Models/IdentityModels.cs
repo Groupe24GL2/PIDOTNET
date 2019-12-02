@@ -29,5 +29,9 @@ namespace PIDOTNET.WEB.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<PIDOTNET.DATA.DataModel.evaluation> evaluations { get; set; }
+
+        public System.Data.Entity.DbSet<PIDOTNET.WEB.Models.EvaluationModel> EvaluationModels { get; set; }
     }
 }

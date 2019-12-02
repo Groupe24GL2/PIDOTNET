@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+
+<head>
+
+
+    <meta name="viewport" content="width-device-width" />
+
+    <title></title>
+
+
+</head>
+
+<body>
+
+
+    <a href="@Url.Action("Create", "Evaluation")">add new Evaluation</a>
+
+    <table cellpadding="2" cellspacing="2" border="1">
+        <tr>
+            <th>nameEvaluation</th>
+            <th>typeEvaluation</th>
+            
+            <th>scoreEvaluation</th>
+            <th>etat</th>
+
+            
+
+        </tr>
+
+        @foreach (var p in ViewBag.result)
+        {
+
+            <tr>
+
+                <td>@p.nameEvaluation</td>
+                <td>@p.typeEvaluation</td>
+                <td>@p.scoreEvaluation</td>
+                <td>@p.etat</td>
+              
+
+
+
+            </tr>
+        }
+
+
+
+
+
+    </table>
+
+</body>
+
+
+
+
+
+</html>
+
+
