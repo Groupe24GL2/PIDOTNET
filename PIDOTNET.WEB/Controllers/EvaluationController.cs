@@ -58,5 +58,61 @@ namespace PIDOTNET.WEB.Controllers
         }
 
 
+
+
+        // GET: Project/Delete/5
+        public ActionResult Delete(int id)
+        {
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri("http://localhost:9080/PIDEV4GL2-web/");
+            client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+            HttpResponseMessage response = client.GetAsync("api/aaaa/" + id).Result;
+            Evaluation project = new Evaluation();
+            if (response.IsSuccessStatusCode)
+            {
+
+                project = response.Content.ReadAsAsync<Evaluation>().Result;
+
+            }
+            else
+            {
+                ViewBag.project = "erreur";
+            }
+
+            return View(project);
+        }
+
+        // POST: Project/Delete/5
+        [HttpPost]
+        public ActionResult Delete(int id, FormCollection collection)
+        {
+            try
+            {
+                // TODO: Add delete logic here
+                HttpClient client = new HttpClient();
+                client.BaseAddress = new Uri("http://localhost:9080/PIDEV4GL2-web/");
+
+                // TODO: Add insert logic here
+                client.DeleteAsync("api/aaaa/" + id)
+                        .ContinueWith((postTask) => postTask.Result.IsSuccessStatusCode);
+
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
     }
 }
