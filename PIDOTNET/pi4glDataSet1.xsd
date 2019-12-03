@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="pi4glDataSet1" targetNamespace="http://tempuri.org/pi4glDataSet1.xsd" xmlns:mstns="http://tempuri.org/pi4glDataSet1.xsd" xmlns="http://tempuri.org/pi4glDataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="pi4glConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="pi4glConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.PIDOTNET.Properties.Settings.GlobalReference.Default.pi4glConnectionString1" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="employeeTableAdapter" GeneratorDataComponentClassName="employeeTableAdapter" Name="employee" UserDataComponentName="employeeTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="pi4glConnectionString1 (Settings)" DbObjectName="pi4gl.employee" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `id`, `name` FROM `employee`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="evaluationTableAdapter" GeneratorDataComponentClassName="evaluationTableAdapter" Name="evaluation" UserDataComponentName="evaluationTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="pi4glConnectionString1 (Settings)" DbObjectName="pi4gl.evaluation" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `id`, `etat`, `nameEvaluation`, `scoreEvaluation`, `typeEvaluation` FROM `evaluation`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ficheevaluationTableAdapter" GeneratorDataComponentClassName="ficheevaluationTableAdapter" Name="ficheevaluation" UserDataComponentName="ficheevaluationTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="pi4glConnectionString1 (Settings)" DbObjectName="pi4gl.ficheevaluation" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `idEmployee`, `idEvaluation`, `averageRate`, `comment`, `desription`, `noteCommunication`, `noteDeadlineRespect`, `noteInteraction`, `noteLeadership`, `noteOrganisation`, `noteRegularity`, `noteTeamWork`, `noteWorkQuality` FROM `ficheevaluation`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="missionTableAdapter" GeneratorDataComponentClassName="missionTableAdapter" Name="mission" UserDataComponentName="missionTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="pi4glConnectionString1 (Settings)" DbObjectName="pi4gl.mission" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `id`, `dateDeb`, `dateFin`, `description`, `name`, `place`, `repaymentMethod` FROM `mission`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="missionexpensesTableAdapter" GeneratorDataComponentClassName="missionexpensesTableAdapter" Name="missionexpenses" UserDataComponentName="missionexpensesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="pi4glConnectionString1 (Settings)" DbObjectName="pi4gl.missionexpenses" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `id`, `accommodationFees`, `ceiling`, `idMission`, `mealFees`, `transportationCosts` FROM `missionexpenses`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="pi4gl.employeeTableAdapter" GeneratorDataComponentClassName="pi4gl_employeeTableAdapter" Name="pi4gl.employee" UserDataComponentName="pi4gl.employeeTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="pi4glConnectionString1 (Settings)" DbObjectName="pi4gl.`pi4gl.employee`" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `id`, `name` FROM `pi4gl.employee`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="pi4gl.evaluationTableAdapter" GeneratorDataComponentClassName="pi4gl_evaluationTableAdapter" Name="pi4gl.evaluation" UserDataComponentName="pi4gl.evaluationTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="pi4glConnectionString1 (Settings)" DbObjectName="pi4gl.`pi4gl.evaluation`" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `id`, `etat`, `nameEvaluation`, `scoreEvaluation`, `typeEvaluation` FROM `pi4gl.evaluation`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="pi4gl.missionTableAdapter" GeneratorDataComponentClassName="pi4gl_missionTableAdapter" Name="pi4gl.mission" UserDataComponentName="pi4gl.missionTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="pi4glConnectionString1 (Settings)" DbObjectName="pi4gl.`pi4gl.mission`" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `id`, `dateDeb`, `dateFin`, `description`, `name`, `place`, `repaymentMethod` FROM `pi4gl.mission`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="pi4gl.missionexpensesTableAdapter" GeneratorDataComponentClassName="pi4gl_missionexpensesTableAdapter" Name="pi4gl.missionexpenses" UserDataComponentName="pi4gl.missionexpensesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="pi4glConnectionString1 (Settings)" DbObjectName="pi4gl.`pi4gl.missionexpenses`" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `id`, `accommodationFees`, `ceiling`, `idMission`, `mealFees`, `transportationCosts` FROM `pi4gl.missionexpenses`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="pi4gl.repaymentTableAdapter" GeneratorDataComponentClassName="pi4gl_repaymentTableAdapter" Name="pi4gl.repayment" UserDataComponentName="pi4gl.repaymentTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="pi4glConnectionString1 (Settings)" DbObjectName="pi4gl.`pi4gl.repayment`" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `id`, `idEmp`, `idMess`, `money`, `ribEmp` FROM `pi4gl.repayment`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="pi4gl.taskTableAdapter" GeneratorDataComponentClassName="pi4gl_taskTableAdapter" Name="pi4gl.task" UserDataComponentName="pi4gl.taskTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="pi4glConnectionString1 (Settings)" DbObjectName="pi4gl.`pi4gl.task`" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `id`, `idM`, `state`, `task` FROM `pi4gl.task`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="repaymentTableAdapter" GeneratorDataComponentClassName="repaymentTableAdapter" Name="repayment" UserDataComponentName="repaymentTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="pi4glConnectionString1 (Settings)" DbObjectName="pi4gl.repayment" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `id`, `idEmp`, `idMess`, `money`, `ribEmp` FROM `repayment`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="pi4glDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="pi4glDataSet1" msprop:Generator_UserDSName="pi4glDataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="employee" msprop:Generator_TableClassName="employeeDataTable" msprop:Generator_TableVarName="tableemployee" msprop:Generator_TablePropName="employee" msprop:Generator_RowDeletingName="employeeRowDeleting" msprop:Generator_RowChangingName="employeeRowChanging" msprop:Generator_RowEvHandlerName="employeeRowChangeEventHandler" msprop:Generator_RowDeletedName="employeeRowDeleted" msprop:Generator_UserTableName="employee" msprop:Generator_RowChangedName="employeeRowChanged" msprop:Generator_RowEvArgName="employeeRowChangeEvent" msprop:Generator_RowClassName="employeeRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="evaluation" msprop:Generator_TableClassName="evaluationDataTable" msprop:Generator_TableVarName="tableevaluation" msprop:Generator_TablePropName="evaluation" msprop:Generator_RowDeletingName="evaluationRowDeleting" msprop:Generator_RowChangingName="evaluationRowChanging" msprop:Generator_RowEvHandlerName="evaluationRowChangeEventHandler" msprop:Generator_RowDeletedName="evaluationRowDeleted" msprop:Generator_UserTableName="evaluation" msprop:Generator_RowChangedName="evaluationRowChanged" msprop:Generator_RowEvArgName="evaluationRowChangeEvent" msprop:Generator_RowClassName="evaluationRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ficheevaluation" msprop:Generator_TableClassName="ficheevaluationDataTable" msprop:Generator_TableVarName="tableficheevaluation" msprop:Generator_TablePropName="ficheevaluation" msprop:Generator_RowDeletingName="ficheevaluationRowDeleting" msprop:Generator_RowChangingName="ficheevaluationRowChanging" msprop:Generator_RowEvHandlerName="ficheevaluationRowChangeEventHandler" msprop:Generator_RowDeletedName="ficheevaluationRowDeleted" msprop:Generator_UserTableName="ficheevaluation" msprop:Generator_RowChangedName="ficheevaluationRowChanged" msprop:Generator_RowEvArgName="ficheevaluationRowChangeEvent" msprop:Generator_RowClassName="ficheevaluationRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="mission" msprop:Generator_TableClassName="missionDataTable" msprop:Generator_TableVarName="tablemission" msprop:Generator_TablePropName="mission" msprop:Generator_RowDeletingName="missionRowDeleting" msprop:Generator_RowChangingName="missionRowChanging" msprop:Generator_RowEvHandlerName="missionRowChangeEventHandler" msprop:Generator_RowDeletedName="missionRowDeleted" msprop:Generator_UserTableName="mission" msprop:Generator_RowChangedName="missionRowChanged" msprop:Generator_RowEvArgName="missionRowChangeEvent" msprop:Generator_RowClassName="missionRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="missionexpenses" msprop:Generator_TableClassName="missionexpensesDataTable" msprop:Generator_TableVarName="tablemissionexpenses" msprop:Generator_TablePropName="missionexpenses" msprop:Generator_RowDeletingName="missionexpensesRowDeleting" msprop:Generator_RowChangingName="missionexpensesRowChanging" msprop:Generator_RowEvHandlerName="missionexpensesRowChangeEventHandler" msprop:Generator_RowDeletedName="missionexpensesRowDeleted" msprop:Generator_UserTableName="missionexpenses" msprop:Generator_RowChangedName="missionexpensesRowChanged" msprop:Generator_RowEvArgName="missionexpensesRowChangeEvent" msprop:Generator_RowClassName="missionexpensesRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="pi4gl.employee" msprop:Generator_TableClassName="_pi4gl_employeeDataTable" msprop:Generator_TableVarName="_tablepi4gl_employee" msprop:Generator_TablePropName="_pi4gl_employee" msprop:Generator_RowDeletingName="_pi4gl_employeeRowDeleting" msprop:Generator_RowChangingName="_pi4gl_employeeRowChanging" msprop:Generator_RowEvHandlerName="_pi4gl_employeeRowChangeEventHandler" msprop:Generator_RowDeletedName="_pi4gl_employeeRowDeleted" msprop:Generator_UserTableName="pi4gl.employee" msprop:Generator_RowChangedName="_pi4gl_employeeRowChanged" msprop:Generator_RowEvArgName="_pi4gl_employeeRowChangeEvent" msprop:Generator_RowClassName="_pi4gl_employeeRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="pi4gl.evaluation" msprop:Generator_TableClassName="_pi4gl_evaluationDataTable" msprop:Generator_TableVarName="_tablepi4gl_evaluation" msprop:Generator_TablePropName="_pi4gl_evaluation" msprop:Generator_RowDeletingName="_pi4gl_evaluationRowDeleting" msprop:Generator_RowChangingName="_pi4gl_evaluationRowChanging" msprop:Generator_RowEvHandlerName="_pi4gl_evaluationRowChangeEventHandler" msprop:Generator_RowDeletedName="_pi4gl_evaluationRowDeleted" msprop:Generator_UserTableName="pi4gl.evaluation" msprop:Generator_RowChangedName="_pi4gl_evaluationRowChanged" msprop:Generator_RowEvArgName="_pi4gl_evaluationRowChangeEvent" msprop:Generator_RowClassName="_pi4gl_evaluationRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="pi4gl.mission" msprop:Generator_TableClassName="_pi4gl_missionDataTable" msprop:Generator_TableVarName="_tablepi4gl_mission" msprop:Generator_TablePropName="_pi4gl_mission" msprop:Generator_RowDeletingName="_pi4gl_missionRowDeleting" msprop:Generator_RowChangingName="_pi4gl_missionRowChanging" msprop:Generator_RowEvHandlerName="_pi4gl_missionRowChangeEventHandler" msprop:Generator_RowDeletedName="_pi4gl_missionRowDeleted" msprop:Generator_UserTableName="pi4gl.mission" msprop:Generator_RowChangedName="_pi4gl_missionRowChanged" msprop:Generator_RowEvArgName="_pi4gl_missionRowChangeEvent" msprop:Generator_RowClassName="_pi4gl_missionRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="pi4gl.missionexpenses" msprop:Generator_TableClassName="_pi4gl_missionexpensesDataTable" msprop:Generator_TableVarName="_tablepi4gl_missionexpenses" msprop:Generator_TablePropName="_pi4gl_missionexpenses" msprop:Generator_RowDeletingName="_pi4gl_missionexpensesRowDeleting" msprop:Generator_RowChangingName="_pi4gl_missionexpensesRowChanging" msprop:Generator_RowEvHandlerName="_pi4gl_missionexpensesRowChangeEventHandler" msprop:Generator_RowDeletedName="_pi4gl_missionexpensesRowDeleted" msprop:Generator_UserTableName="pi4gl.missionexpenses" msprop:Generator_RowChangedName="_pi4gl_missionexpensesRowChanged" msprop:Generator_RowEvArgName="_pi4gl_missionexpensesRowChangeEvent" msprop:Generator_RowClassName="_pi4gl_missionexpensesRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="pi4gl.repayment" msprop:Generator_TableClassName="_pi4gl_repaymentDataTable" msprop:Generator_TableVarName="_tablepi4gl_repayment" msprop:Generator_TablePropName="_pi4gl_repayment" msprop:Generator_RowDeletingName="_pi4gl_repaymentRowDeleting" msprop:Generator_RowChangingName="_pi4gl_repaymentRowChanging" msprop:Generator_RowEvHandlerName="_pi4gl_repaymentRowChangeEventHandler" msprop:Generator_RowDeletedName="_pi4gl_repaymentRowDeleted" msprop:Generator_UserTableName="pi4gl.repayment" msprop:Generator_RowChangedName="_pi4gl_repaymentRowChanged" msprop:Generator_RowEvArgName="_pi4gl_repaymentRowChangeEvent" msprop:Generator_RowClassName="_pi4gl_repaymentRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="pi4gl.task" msprop:Generator_TableClassName="_pi4gl_taskDataTable" msprop:Generator_TableVarName="_tablepi4gl_task" msprop:Generator_TablePropName="_pi4gl_task" msprop:Generator_RowDeletingName="_pi4gl_taskRowDeleting" msprop:Generator_RowChangingName="_pi4gl_taskRowChanging" msprop:Generator_RowEvHandlerName="_pi4gl_taskRowChangeEventHandler" msprop:Generator_RowDeletedName="_pi4gl_taskRowDeleted" msprop:Generator_UserTableName="pi4gl.task" msprop:Generator_RowChangedName="_pi4gl_taskRowChanged" msprop:Generator_RowEvArgName="_pi4gl_taskRowChangeEvent" msprop:Generator_RowClassName="_pi4gl_taskRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="repayment" msprop:Generator_TableClassName="repaymentDataTable" msprop:Generator_TableVarName="tablerepayment" msprop:Generator_TablePropName="repayment" msprop:Generator_RowDeletingName="repaymentRowDeleting" msprop:Generator_RowChangingName="repaymentRowChanging" msprop:Generator_RowEvHandlerName="repaymentRowChangeEventHandler" msprop:Generator_RowDeletedName="repaymentRowDeleted" msprop:Generator_UserTableName="repayment" msprop:Generator_RowChangedName="repaymentRowChanged" msprop:Generator_RowEvArgName="repaymentRowChangeEvent" msprop:Generator_RowClassName="repaymentRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -80,7 +80,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="DataModel\Class1.cs" />
     <Compile Include="DataModel\employee.cs" />
     <Compile Include="DataModel\evaluation.cs" />
     <Compile Include="DataModel\Evaluation360.cs" />
@@ -89,7 +88,6 @@
     <Compile Include="DataModel\missionexpens.cs" />
     <Compile Include="DataModel\Model1.cs" />
     <Compile Include="DataModel\repayment.cs" />
-    <Compile Include="DataModel\task.cs" />
     <Compile Include="Infrastructure\DataBaseFactory.cs" />
     <Compile Include="Infrastructure\Disposable.cs" />
     <Compile Include="Infrastructure\IDataBaseFactory.cs" />
@@ -97,20 +95,44 @@
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\RepositoryBase.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
-    <Compile Include="Migrations\201912011604327_f.cs" />
-    <Compile Include="Migrations\201912011604327_f.Designer.cs">
-      <DependentUpon>201912011604327_f.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201912021112251_ter.cs" />
-    <Compile Include="Migrations\201912021112251_ter.Designer.cs">
-      <DependentUpon>201912021112251_ter.cs</DependentUpon>
+    <Compile Include="Migrations\201912031445039_t60.cs" />
+    <Compile Include="Migrations\201912031445039_t60.Designer.cs">
+      <DependentUpon>201912031445039_t60.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="pi4glDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>pi4glDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\GenericRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
+    <None Include="pi4glDataSet.xsc">
+      <DependentUpon>pi4glDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="pi4glDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>pi4glDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="pi4glDataSet.xss">
+      <DependentUpon>pi4glDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PIDOTNET.DOMAIN\PIDOTNET.DOMAIN.csproj">
@@ -119,14 +141,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201912011604327_f.resx">
-      <DependentUpon>201912011604327_f.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201912021112251_ter.resx">
-      <DependentUpon>201912021112251_ter.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201912031445039_t60.resx">
+      <DependentUpon>201912031445039_t60.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

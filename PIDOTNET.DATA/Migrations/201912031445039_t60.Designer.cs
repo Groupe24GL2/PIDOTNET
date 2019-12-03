@@ -7,13 +7,13 @@ namespace PIDOTNET.DATA.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class f : IMigrationMetadata
+    public sealed partial class t60 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(f));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(t60));
         
         string IMigrationMetadata.Id
         {
-            get { return "201912011604327_f"; }
+            get { return "201912031445039_t60"; }
         }
         
         string IMigrationMetadata.Source

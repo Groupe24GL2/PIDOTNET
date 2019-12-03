@@ -11,7 +11,9 @@ namespace PIDOTNET.WEB.ViewModel
 
 
 
-        public int Id { get; set; }
+        public int id { get; set; } /// <summary>
+        /// min id
+        /// </summary>
         public string nameEvaluation { get; set; }
         public string typeEvaluation { get; set; }
         public float scoreEvaluation { get; set; }
