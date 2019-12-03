@@ -14,7 +14,7 @@ namespace PIDOTNET.WEB.Controllers
             HttpClient Client = new HttpClient();
             Client.BaseAddress = new Uri("http://localhost:9080/PIDEV4GL2-web/");
             Client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
-            HttpResponseMessage response = Client.GetAsync("api/all").Result;
+            HttpResponseMessage response = Client.GetAsync("rest/mission/all").Result;
             if (response.IsSuccessStatusCode)
             {  
 
