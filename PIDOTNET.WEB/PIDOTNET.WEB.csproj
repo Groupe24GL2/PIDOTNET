@@ -274,6 +274,7 @@
     <Content Include="Views\Eval\Index.cshtml" />
     <Content Include="Views\Eval\Delete.cshtml" />
     <Content Include="Views\Eval\Edit.cshtml" />
+    <Content Include="Views\Eval\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
