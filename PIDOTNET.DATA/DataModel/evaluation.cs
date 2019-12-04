@@ -13,6 +13,7 @@ namespace PIDOTNET.DATA.DataModel
         public evaluation()
         {
             ficheevaluations = new HashSet<ficheevaluation>();
+            employees = new HashSet<employee>();
         }
 
         public int id { get; set; }
@@ -23,12 +24,15 @@ namespace PIDOTNET.DATA.DataModel
         [StringLength(255)]
         public string nameEvaluation { get; set; }
 
-        public float scoreEvaluation { get; set; }
+        public float? scoreEvaluation { get; set; }
 
         [StringLength(255)]
         public string typeEvaluation { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ficheevaluation> ficheevaluations { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<employee> employees { get; set; }
     }
 }

@@ -21,7 +21,7 @@ namespace PIDOTNET.WEB.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("Model1", throwIfV1Schema: false)
+            : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
 
@@ -34,6 +34,6 @@ namespace PIDOTNET.WEB.Models
 
         public System.Data.Entity.DbSet<PIDOTNET.WEB.Models.EvaluationModel> EvaluationModels { get; set; }
 
-        public System.Data.Entity.DbSet<PIDOTNET.DATA.DataModel.Evaluation360> Evaluation360 { get; set; }
+      //  public System.Data.Entity.DbSet<PIDOTNET.DATA.DataModel.Evaluation360> Evaluation360 { get; set; }
     }
 }

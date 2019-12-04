@@ -1,28 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.Entity.Spatial;
 namespace PIDOTNET.DATA.DataModel
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data.Entity.Spatial;
+
     [Table("pi4gl.evaluation360")]
-   public partial class Evaluation360
+    public partial class evaluation360
     {
-        public int id { get; set; }
+        [Key]
+        public int id_eval { get; set; }
 
-        [Column(TypeName = "bit")]
-        public bool etat { get; set; }
+        [StringLength(30)]
+        public string nom { get; set; }
 
-        [StringLength(255)]
-        public string nameEvaluation { get; set; }
+        [StringLength(30)]
+        public string description { get; set; }
 
-        public float noteEvaluation { get; set; }
+        [StringLength(30)]
+        public string avis { get; set; }
 
-        [StringLength(255)]
-        public string avisEvaluation { get; set; }
-
-        
-
-
-}
+        public float? note { get; set; }
+    }
 }

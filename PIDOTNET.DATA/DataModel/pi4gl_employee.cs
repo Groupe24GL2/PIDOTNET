@@ -6,14 +6,13 @@ namespace PIDOTNET.DATA.DataModel
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("pi4gl.employee")]
-    public partial class employee
+    [Table("pi4gl.[pi4gl.employee]")]
+    public partial class pi4gl_employee
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public employee()
+        public pi4gl_employee()
         {
-            ficheevaluations = new HashSet<ficheevaluation>();
-            evaluations = new HashSet<evaluation>();
+            pi4gl_ficheevaluation = new HashSet<pi4gl_ficheevaluation>();
         }
 
         public int id { get; set; }
@@ -22,9 +21,6 @@ namespace PIDOTNET.DATA.DataModel
         public string name { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ficheevaluation> ficheevaluations { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<evaluation> evaluations { get; set; }
+        public virtual ICollection<pi4gl_ficheevaluation> pi4gl_ficheevaluation { get; set; }
     }
 }

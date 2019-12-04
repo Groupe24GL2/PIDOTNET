@@ -1,31 +1,40 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PIDOTNET.DATA.DataModel;
 
 namespace PIDOTNET.DATA.Infrastructure
 {
-    public class UnitOfWork: IUnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
-        IDataBaseFactory Factory;
-        public UnitOfWork(IDataBaseFactory factory)
+       
+         private Model4 dataContext;
+
+        IDatabaseFactory dbFactory;
+        public UnitOfWork(IDatabaseFactory dbFactory)
         {
-            Factory = factory;
+            this.dbFactory = dbFactory;
+            dataContext = dbFactory.DataContext;
         }
+        
+
+
         public void Commit()
         {
-            Factory.Ctxt.SaveChanges();
+            dataContext.SaveChanges();
         }
-
+        
         public void Dispose()
         {
-            Factory.Dispose();
+            dataContext.Dispose();
         }
-
-        public IRepositoryBase<T> GetRepositoryBase<T>() where T : class
+        public IRepositoryBase<T> getRepository<T>() where T : class
         {
-            return new RepositoryBase<T>(Factory);
+            IRepositoryBase<T> repo = new RepositoryBase<T>(dbFactory);
+            return repo;
         }
+      
     }
 }

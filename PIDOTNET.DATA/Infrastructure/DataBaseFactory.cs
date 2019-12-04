@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,27 +9,20 @@ using PIDOTNET.DATA.DataModel;
 
 namespace PIDOTNET.DATA.Infrastructure
 {
-    public class DataBaseFactory: Disposable, IDataBaseFactory
+    public class DatabaseFactory : Disposable, IDatabaseFactory
     {
-        Model1 ctxt;
+       private Model4 dataContext;
+        public Model4 DataContext { get { return dataContext; } }
 
-        public Model1 Ctxt
+        public DatabaseFactory()
         {
-            get
-            {
-                return ctxt;
-            }
+            dataContext = new Model4();
         }
-
-        public DataBaseFactory()
+        protected override void DisposeCore()
         {
-            ctxt = new Model1();
-        }
-
-        public override void DisposeCore()
-        {
-            if (ctxt != null)
-                ctxt.Dispose();
+            if (DataContext != null)
+                DataContext.Dispose();
         }
     }
+
 }

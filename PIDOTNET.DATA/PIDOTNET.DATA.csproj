@@ -80,26 +80,30 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="DataModel\C__migrationhistory.cs" />
     <Compile Include="DataModel\employee.cs" />
     <Compile Include="DataModel\evaluation.cs" />
-    <Compile Include="DataModel\Evaluation360.cs" />
+    <Compile Include="DataModel\evaluation360.cs" />
     <Compile Include="DataModel\ficheevaluation.cs" />
     <Compile Include="DataModel\mission.cs" />
     <Compile Include="DataModel\missionexpens.cs" />
-    <Compile Include="DataModel\Model1.cs" />
+    <Compile Include="DataModel\Model4.cs" />
+    <Compile Include="DataModel\pi4gl_employee.cs" />
+    <Compile Include="DataModel\pi4gl_evaluation.cs" />
+    <Compile Include="DataModel\pi4gl_evaluation360.cs" />
+    <Compile Include="DataModel\pi4gl_ficheevaluation.cs" />
+    <Compile Include="DataModel\pi4gl_mission.cs" />
+    <Compile Include="DataModel\pi4gl_missionexpenses.cs" />
+    <Compile Include="DataModel\pi4gl_repayment.cs" />
     <Compile Include="DataModel\repayment.cs" />
-    <Compile Include="Infrastructure\DataBaseFactory.cs" />
+    <Compile Include="DataModel\task.cs" />
+    <Compile Include="Infrastructure\DatabaseFactory.cs" />
     <Compile Include="Infrastructure\Disposable.cs" />
-    <Compile Include="Infrastructure\IDataBaseFactory.cs" />
+    <Compile Include="Infrastructure\IDatabaseFactory.cs" />
     <Compile Include="Infrastructure\IRepositoryBase.cs" />
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\RepositoryBase.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
-    <Compile Include="Migrations\201912031445039_t60.cs" />
-    <Compile Include="Migrations\201912031445039_t60.Designer.cs">
-      <DependentUpon>201912031445039_t60.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="pi4glDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -111,7 +115,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Repository\GenericRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -140,11 +143,7 @@
       <Name>PIDOTNET.DOMAIN</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201912031445039_t60.resx">
-      <DependentUpon>201912031445039_t60.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -9,70 +10,76 @@ using PIDOTNET.DATA.DataModel;
 
 namespace PIDOTNET.DATA.Infrastructure
 {
-    public class RepositoryBase<T>: IRepositoryBase<T> where T : class
+    public class RepositoryBase<T> : IRepositoryBase<T> where T : class
     {
-        Model1 ctx;
-        readonly DbSet<T> dbset;
-        public RepositoryBase(IDataBaseFactory Factory)
+        private Model4 dataContext;
+        private readonly IDbSet<T> dbset;
+        IDatabaseFactory databaseFactory;
+        public RepositoryBase(IDatabaseFactory dbFactory)
         {
-            ctx = Factory.Ctxt;
-            dbset = ctx.Set<T>();
-        }
-        public void Add(T Entity)
-        {
-            dbset.Add(Entity);
-        }
+            this.databaseFactory = dbFactory;
+            dbset = DataContext.Set<T>();
 
-        public void Commit()
+
+        }
+        protected Model4 DataContext
         {
-            ctx.SaveChanges();
+            get { return dataContext = databaseFactory.DataContext; }
         }
 
-        public void Delete(Expression<Func<T, bool>> Condition)
+
+        public virtual void Add(T entity)
         {
-            IEnumerable<T> query = dbset.Where(Condition);
-            if (query != null)
-            {
-                foreach (T entity in query)
-                    dbset.Remove(entity);
-
-            }
+            dbset.Add(entity);
         }
-
-        public void Delete(T Entity)
+        public virtual void Update(T entity)
         {
-            ctx.Entry(Entity).State = EntityState.Deleted;
-            //dbset.Remove(Entity);
+            dbset.Attach(entity);
+            dataContext.Entry(entity).State = EntityState.Modified;
         }
-
-        public T GetById(string id)
+        public virtual void Delete(T entity)
+        {
+            dbset.Remove(entity);
+        }
+        public virtual void Delete(Expression<Func<T, bool>> where)
+        {
+            IEnumerable<T> objects = dbset.Where<T>(where).AsEnumerable();
+            foreach (T obj in objects)
+                dbset.Remove(obj);
+        }
+        public virtual T GetById(long id)
         {
             return dbset.Find(id);
         }
-
-
-        public T GetById(int id)
+        public virtual T GetById(string id)
         {
             return dbset.Find(id);
-        }
-
-        public IEnumerable<T> GetMany(Expression<Func<T, bool>> Condition = null, Expression<Func<T, bool>> orderBy = null)
-        {
-            IQueryable<T> query = dbset;
-            if (Condition != null)
-                query = query.Where(Condition);
-            if (orderBy != null)
-                query = query.OrderBy(orderBy);
-            return query.AsEnumerable();
         }
         public virtual IEnumerable<T> GetAll()
         {
             return dbset.ToList();
         }
-        public void Update(T Entity)
+
+        public virtual IEnumerable<T> GetMany(Expression<Func<T, bool>> where = null, Expression<Func<T, bool>> orderBy = null)
         {
-            dbset.Attach(Entity);
-            ctx.Entry<T>(Entity).State = EntityState.Modified;
+            IQueryable<T> Query = dbset;
+            if (where != null)
+            {
+                Query = Query.Where(where);
+            }
+            if (orderBy != null)
+            {
+                Query = Query.OrderBy(orderBy);
+            }
+            return Query;
         }
+        public T Get(Expression<Func<T, bool>> where)
+        {
+            return dbset.Where(where).FirstOrDefault<T>();
+        }
+
+
+
+
     }
 }

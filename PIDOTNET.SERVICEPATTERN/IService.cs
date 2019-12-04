@@ -1,26 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
-using System.Linq.Expressions;
-
+using PIDOTNET.DATA.Infrastructure;
 
 namespace PIDOTNET.SERVICEPATTERN
 {
-    public interface IService<T> where T : class
+    public interface IService<T> : IDisposable
+    where T : class
     {
-        //crud
-        void Add(T Entity);
-        T GetById(int id);
-        T GetById(string id);
-        IEnumerable<T> GetMany(Expression<Func<T, bool>> Condition = null,
-            Expression<Func<T, bool>> orderBy = null);//list conditionné
-        void Update(T Entity);
-        void Delete(T Entity);
-        void Delete(Expression<Func<T, bool>> Condition);
+        void Add(T entity);
+        void Update(T entity);
+        void Delete(T entity);
+        void Delete(Expression<Func<T, bool>> where);
+        T GetById(long id);
+        //T GetById(string id);
+        IEnumerable<T> GetMany(Expression<Func<T, bool>> where = null, Expression<Func<T, bool>> orderBy = null);
+        T Get(Expression<Func<T, bool>> where);
         IEnumerable<T> GetAll();
+
         void Commit();
-        void dispose();
+
+
+
     }
 }
