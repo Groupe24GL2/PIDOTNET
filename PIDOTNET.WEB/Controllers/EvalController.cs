@@ -32,7 +32,19 @@ namespace PIDOTNET.WEB.Controllers
         // GET: Eval/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            IUnitOfWork Uok = new UnitOfWork(Factory);
+            IService<evaluation360> jbService = new Service<evaluation360>(Uok);
+            evaluation360 app = jbService.GetById(id);
+            return View(app);
+            if (app == null)
+            {
+                return HttpNotFound();
+            }
+            return View(app);
         }
 
         // GET: Eval/Create
