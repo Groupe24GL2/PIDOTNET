@@ -9,6 +9,8 @@ using PIDOTNET.SERVICEPATTERN;
 using System.Net;
 using System.Net.Mail;
 using PIDOTNET.SERVICE;
+using PagedList.Mvc;
+using PagedList;
 
 namespace PIDOTNET.WEB.Controllers
 {
