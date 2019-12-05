@@ -4,7 +4,7 @@
 *  version 2.8
 *
 -->
- @{ Layout = null;}
+@{ Layout = null;}
 <!DOCTYPE html>
 <html>
 
@@ -56,16 +56,24 @@
                         </div>
                     </li>
                     <li>
-                        <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span> <span class="fa arrow"></span></a>
+                        <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Evaluation</span> <span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level collapse">
-                            <li><a href="index.html">Dashboard v.1</a></li>
-                            <li><a href="dashboard_2.html">Dashboard v.2</a></li>
-                            <li><a href="dashboard_3.html">Dashboard v.3</a></li>
-                            <li><a href="dashboard_4_1.html">Dashboard v.4</a></li>
-                            <li><a href="dashboard_5.html">Dashboard v.5 </a></li>
+                            <li><a href="~/Evaluation/Create">Add Eval</a></li>
+                            <li><a href="~/Evaluation/Index">Manage Eval</a></li>
+
                         </ul>
                     </li>
-            
+                    <li>
+                        <a href=""><i class="fa fa-th-large"></i> <span class="nav-label">Evaluation 360</span> <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li><a href="~/Eval/Create">Add Eval 360</a></li>
+                            <li><a href="~/Eval/Index">Manage Eval 360</a></li>
+                            <li><a href="~/Eval/stat">Stat of Eval 360</a></li>
+
+
+                        </ul>
+                    </li>
+
                 </ul>
 
             </div>
@@ -194,31 +202,54 @@
             </div>
             <div class="row wrapper border-bottom white-bg page-heading">
                 <div class="col-sm-4">
-                    <h2>This is main title</h2>
+                    <h2>Statistic of Evaluation 360</h2>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
-                            <a href="index.html">This is</a>
+                            <a href="index.html">Evaluation 360</a>
                         </li>
                         <li class="breadcrumb-item active">
-                            <strong>Breadcrumb</strong>
+                            <strong>Statistic of Evaluation 360</strong>
                         </li>
                     </ol>
                 </div>
-                <div class="col-sm-8">
-                    <div class="title-action">
-                        <a href="" class="btn btn-primary">This is action area</a>
-                    </div>
-                </div>
+
             </div>
 
             <div class="wrapper wrapper-content">
-                <div class="middle-box text-center animated fadeInRightBig">
-              
 
-                    @*rachma1*@
-                    @*rachma2*@
 
-                </div>
+
+                @*rachma1*@
+
+                @{
+                    ViewBag.Title = "stat";
+                }
+                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                <script type="text/javascript">
+        google.charts.load("current", { packages: ["corechart"] });
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Avis', 'Nombre'],
+                ['Bon', @ViewBag.t],
+                ['Moyen', @ViewBag.f],
+                ['Mauvais', @ViewBag.r],
+
+            ]);
+
+            var options = {
+                title: 'Stat Sur les Avis Des Evaluation ',
+                is3D: true,
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+            chart.draw(data, options);
+        }
+                </script>
+
+                <div id="piechart_3d" style="width: 900px; height: 500px;"></div>
+                @*rachma2*@
+
             </div>
             <div class="footer">
                 <div class="float-right">
@@ -275,8 +306,8 @@
 
 
     <script>
-        $(document).ready(function() {
-            setTimeout(function() {
+        $(document).ready(function () {
+            setTimeout(function () {
                 toastr.options = {
                     closeButton: true,
                     progressBar: true,
@@ -289,10 +320,10 @@
 
 
             var data1 = [
-                [0,4],[1,8],[2,5],[3,10],[4,4],[5,16],[6,5],[7,11],[8,6],[9,11],[10,30],[11,10],[12,13],[13,4],[14,3],[15,3],[16,6]
+                [0, 4], [1, 8], [2, 5], [3, 10], [4, 4], [5, 16], [6, 5], [7, 11], [8, 6], [9, 11], [10, 30], [11, 10], [12, 13], [13, 4], [14, 3], [15, 3], [16, 6]
             ];
             var data2 = [
-                [0,1],[1,0],[2,2],[3,0],[4,1],[5,3],[6,1],[7,5],[8,2],[9,3],[10,2],[11,1],[12,0],[13,2],[14,8],[15,0],[16,0]
+                [0, 1], [1, 0], [2, 2], [3, 0], [4, 1], [5, 3], [6, 1], [7, 5], [8, 2], [9, 3], [10, 2], [11, 1], [12, 0], [13, 2], [14, 8], [15, 0], [16, 0]
             ];
             $("#flot-dashboard-chart").length && $.plot($("#flot-dashboard-chart"), [
                 data1, data2
@@ -323,7 +354,7 @@
                             color: '#d5d5d5'
                         },
                         colors: ["#1ab394", "#1C84C6"],
-                        xaxis:{
+                        xaxis: {
                         },
                         yaxis: {
                             ticks: 4
@@ -333,12 +364,12 @@
             );
 
             var doughnutData = {
-                labels: ["App","Software","Laptop" ],
+                labels: ["App", "Software", "Laptop"],
                 datasets: [{
-                    data: [300,50,100],
-                    backgroundColor: ["#a3e1d4","#dedede","#9CC3DA"]
+                    data: [300, 50, 100],
+                    backgroundColor: ["#a3e1d4", "#dedede", "#9CC3DA"]
                 }]
-            } ;
+            };
 
 
             var doughnutOptions = {
@@ -350,15 +381,15 @@
 
 
             var ctx4 = document.getElementById("doughnutChart").getContext("2d");
-            new Chart(ctx4, {type: 'doughnut', data: doughnutData, options:doughnutOptions});
+            new Chart(ctx4, { type: 'doughnut', data: doughnutData, options: doughnutOptions });
 
             var doughnutData = {
-                labels: ["App","Software","Laptop" ],
+                labels: ["App", "Software", "Laptop"],
                 datasets: [{
-                    data: [70,27,85],
-                    backgroundColor: ["#a3e1d4","#dedede","#9CC3DA"]
+                    data: [70, 27, 85],
+                    backgroundColor: ["#a3e1d4", "#dedede", "#9CC3DA"]
                 }]
-            } ;
+            };
 
 
             var doughnutOptions = {
@@ -370,7 +401,7 @@
 
 
             var ctx4 = document.getElementById("doughnutChart2").getContext("2d");
-            new Chart(ctx4, {type: 'doughnut', data: doughnutData, options:doughnutOptions});
+            new Chart(ctx4, { type: 'doughnut', data: doughnutData, options: doughnutOptions });
 
         });
     </script>

@@ -7,6 +7,8 @@ using PIDOTNET.DATA.DataModel;
 using PIDOTNET.DATA.Infrastructure;
 using PIDOTNET.SERVICEPATTERN;
 using System.Net;
+using System.Net.Mail;
+using PIDOTNET.SERVICE;
 
 namespace PIDOTNET.WEB.Controllers
 {
@@ -89,6 +91,44 @@ namespace PIDOTNET.WEB.Controllers
             app.description = Request.Form["description"];
             jbService.Commit();
 
+
+            //envoyer mail
+
+            var verifyurl = "/Signup/VerifiyAccount/";
+            var link = Request.Url.AbsolutePath.Replace(Request.Url.PathAndQuery, verifyurl);
+
+            var fromEmail = new MailAddress("yassine.taktak@esprit.tn", "Yassine Taktak");
+            var toEmail = new MailAddress("yassinetaktak9@gmail.com");
+
+            var FromEmailPassword = "DJAPPA007";
+
+            string subject = "EVALUATION UPDATE";
+
+            string body = "The evaluation was successfuly updated";
+
+            var smtp = new SmtpClient
+            {
+                Host = "smtp.gmail.com",
+                Port = 587,
+                EnableSsl = true,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential(fromEmail.Address, FromEmailPassword),
+                Timeout = 20000
+            };
+            using (var message = new MailMessage(fromEmail, toEmail)
+            {
+                Subject = subject,
+                Body = body,
+                IsBodyHtml = true
+
+            })
+                smtp.Send(message);
+
+
+            //envoyer mail
+
+
             return RedirectToAction("Index");
         }
 
@@ -124,5 +164,26 @@ namespace PIDOTNET.WEB.Controllers
             db.SaveChanges();*/
             return RedirectToAction("Index");
         }
+
+        public ActionResult stat()
+        {
+            Eval360Service rs = new Eval360Service();
+
+            // var t = rs.GetReclamationbytype(TypeReclamation.Technique).Count();
+            // var f = rs.GetReclamationbytype(TypeReclamation.Financiere).Count();
+            // var rr = rs.GetReclamationbytype(TypeReclamation.Relationnelle).Count();
+            var t = rs.GetEval360byavis("Bon").Count();
+            var f= rs.GetEval360byavis("Moyen").Count();
+           var r= rs.GetEval360byavis("Mauvais").Count();
+
+            ViewBag.t = t;
+            ViewBag.f = f;
+            ViewBag.r = r;
+
+            return View(rs.GetAll().ToList());
+
+        }
+
+
     }
 }

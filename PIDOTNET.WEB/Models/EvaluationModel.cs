@@ -28,7 +28,14 @@ namespace PIDOTNET.WEB.Models
         [Display(Description = "description")]
         public string typeEvaluation { get; set; }
 
-        
+        [Required]
+        [Display(Description = "score")]
+        public float scoreEvaluation { get; set; }
+        [Display(Description = "etat")]
+        public Boolean etat { get; set; }
+
+
+
     }
 
 }
